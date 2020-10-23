@@ -98,11 +98,11 @@ class BurgerBuilder extends Component {
       ingredients: this.state.ingredients,
       price: this.state.totalPrice,
       customer: {
-        name: 'Sergio Castro',
+        name: 'Sergio',
         address: {
-          street: 'Calle Uno',
-          zipCode: '432111',
-          country: 'Zimbaue',
+          street: 'Teststreet 1',
+          zipCode: '41351',
+          country: 'Zimbawe',
         },
         email: 'test@test.com',
       },
@@ -124,14 +124,15 @@ class BurgerBuilder extends Component {
     }
     // {salad: true, meat: false, ...}
 
+    // let burger = this.state.error ? (
+    //   <p>Ingredients can't be loaded</p>
+    // ) : (
+    //   <Spinner />
+    // );
+
     let orderSummary = null;
-
-    if (this.state.loading) {
-      orderSummary = <Spinner />;
-    }
-
     let burger = this.state.error ? (
-      <p>Ingredients can't be loaded</p>
+      <p>Ingredients can`t be loaded from server...</p>
     ) : (
       <Spinner />
     );
@@ -161,9 +162,9 @@ class BurgerBuilder extends Component {
       );
     }
 
-    // if (this.state.loading) {
-    //     orderSummary = <Spinner />
-    // }
+    if (this.state.loading) {
+      orderSummary = <Spinner />;
+    }
 
     return (
       <Aux>
