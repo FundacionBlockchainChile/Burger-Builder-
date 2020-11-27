@@ -28,7 +28,7 @@ export const purchaseBurger = (orderData, token) => {
     axios
       .post('/orders.json?auth=' + token, orderData)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         dispatch(purchaseBurgerSuccess(response.data.name, orderData));
       })
       .catch((error) => {
@@ -42,21 +42,6 @@ export const purchaseInit = () => {
     type: actionTypes.PURCHASE_INIT,
   };
 };
-
-// export const purchaseBurger = (orderData) => {
-//   return (dispatch) => {
-//     dispatch(purchaseBurgerStart());
-//     axios
-//       .post('/orders.json', orderData)
-//       .then((response) => {
-//         console.log(response.data);
-//         dispatch(purchaseBurgerSuccess(response.data.name, orderData));
-//       })
-//       .catch((error) => {
-//         dispatch(purchaseBurgerFail(error));
-//       });
-//   };
-// };
 
 export const fetchOrdersSuccess = (orders) => {
   return {
