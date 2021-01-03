@@ -31,15 +31,17 @@ const BurgerBuilder = (props) => {
 
   const onIngredientAdded = (ingName) =>
     dispatch(actions.addIngredient(ingName));
+
   const onIngredientRemove = (ingName) =>
     dispatch(actions.removeIngredient(ingName));
-  // const onInitIngredients = () =>
-  //   () => dispatch(actions.initIngredients());
+
   const onInitIngredients = useCallback(
     () => dispatch(actions.initIngredients()),
     [dispatch]
   );
+
   const onInitPurchase = () => dispatch(actions.purchaseInit());
+
   const onSetAuthRedirectPath = (path) =>
     dispatch(actions.setAuthRedirectPath(path));
 
